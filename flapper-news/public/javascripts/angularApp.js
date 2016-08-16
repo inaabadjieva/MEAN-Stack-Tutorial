@@ -55,7 +55,7 @@ app.controller('MainController', [
 	'posts',
 	'auth',
 	function($scope, posts,auth){
-		$scope.posts =[];
+		$scope.posts = posts.posts;
 		$scope.isLoggedIn = auth.isLoggedIn;
 
 		$scope.addPost = function(){
@@ -77,7 +77,8 @@ app.controller('PostsController', [
 	'$scope', 
 	'posts', 
 	'post',
-	function($scope, posts, post){
+	'auth',
+	function($scope, posts, post,auth){
 		$scope.post = post;
 		$scope.isLoggedIn = auth.isLoggedIn;
 
