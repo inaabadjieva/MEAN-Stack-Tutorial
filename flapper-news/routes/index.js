@@ -104,8 +104,8 @@ router.post('/posts/:post/comments', auth, function(req, res, next) {
 
 	comment.save(function(err, comment) {
 		if(err) { return next(err); }
-		
-		req.post.comments.push(comment);
+		console.log(comment)
+		//req.post.comments.push(comment._id);
 		req.post.save(function(err, post) {
 		if(err) { return next(err); }
 		res.json(comment);
