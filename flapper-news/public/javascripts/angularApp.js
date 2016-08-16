@@ -7,7 +7,7 @@ app.config([
 		$stateProvider
 		.state('home', {
 			url: '/home',
-			templateUrl: '/home.html',
+			templateUrl: '/views/home.html',
 			controller: 'MainController',
 			resolve: {
 				postPromise: ['posts', function(posts) {
