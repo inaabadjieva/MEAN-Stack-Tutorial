@@ -54,7 +54,7 @@ app.controller('MainController', [
 	'$scope', 
 	'posts',
 	'auth',
-	function($scope, posts, auth){
+	function($scope, posts,auth){
 		$scope.posts = posts.posts;
 		$scope.isLoggedIn = auth.isLoggedIn;
 
@@ -78,7 +78,7 @@ app.controller('PostsController', [
 	'posts', 
 	'post',
 	'auth',
-	function($scope, posts, post, auth){
+	function($scope, posts, post,auth){
 		$scope.post = post;
 		$scope.isLoggedIn = auth.isLoggedIn;
 
@@ -99,7 +99,7 @@ app.controller('PostsController', [
 ]);
 
 //POST FACTORY
-app.factory('posts',  ['$http','auth', function($http, auth){
+app.factory('posts', ['$http','auth',  function($http, auth){
 	var o = {
 		posts: []
 	};

@@ -120,14 +120,14 @@ router.param('comment', function(req, res, next, id) {
 		if(err) { return next(err); }
 		if(!comment) { return next(new Error('can\'t find comment')); }
 
-		req.post.comments = comment;
+		req.comment = comment;
 		return next();
 	});
 });
 
 //UPVOTE Comments
 router.put('/posts/:post/comments/:comment/upvote', auth, function(req, res, next) {
-	req.post.comment.upvote(function(err, comment) {
+	req.comment.upvote(function(err, comment) {
 		if(err) { return next(err); }
 		res.json(comment);
 	});
