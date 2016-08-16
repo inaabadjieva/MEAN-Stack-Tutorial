@@ -53,8 +53,9 @@ app.config([
 app.controller('MainController', [
 	'$scope', 
 	'posts',
-	function($scope, posts){
-		$scope.posts = posts.posts;
+	'auth',
+	function($scope, posts,auth){
+		$scope.posts =[];
 		$scope.isLoggedIn = auth.isLoggedIn;
 
 		$scope.addPost = function(){
@@ -97,7 +98,7 @@ app.controller('PostsController', [
 ]);
 
 //POST FACTORY
-app.factory('posts', 'auth', ['$http', function($http, auth){
+app.factory('posts', ['$http','auth',  function($http, auth){
 	var o = {
 		posts: []
 	};
