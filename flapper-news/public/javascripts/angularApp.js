@@ -17,7 +17,7 @@ app.config([
 		})
 		.state('posts', {
 			url: '/posts/{id}',
-			templateUrl: '/posts.html',
+			templateUrl: 'views/posts.html',
 			controller: 'PostsController',
 			resolve: {
 				post: ['$stateParams', 'posts', function($stateParams, posts) {
