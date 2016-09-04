@@ -49,7 +49,7 @@ router.post('/login', function(req, res, next) {
 
 //GET Posts
 router.get('/posts', function(req, res, next) {
-	Post.find(function(err, posts) {
+	Post.find().populate('author',function(err, posts) {
 		if(err) { return next(err); }
 
 		res.json(posts);
