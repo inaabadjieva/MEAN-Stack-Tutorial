@@ -26,10 +26,3 @@ npm start</pre></div>
 </code></pre>
 
 
-<h2>Install &amp; Run</h2>
-
-<pre><code>
-$ npm install
-$ npm start
-</code></pre>
-
